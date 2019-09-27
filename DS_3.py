@@ -12,3 +12,11 @@ def plotpoint(col2):
     ax.set_ylabel("row", labelpad=20, size=12)
     ax.set_title('graph between row and column' +str(col1))
 plotpoint(19)
+
+prices = [12,13,12,23,33,21,45,50]
+prices_N = [11,22,33,44,55,66,77,88]
+plt.hist(x=prices,bins = 6,density=1,alpha = 0.5,label='prices')
+plt.hist(x = prices_N,bins = 6,density=1,alpha = 0.5,label='prices_N')
+plt.legend()
+plt.savefig('layering hist.png')
+plt.show()
