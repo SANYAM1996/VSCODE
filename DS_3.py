@@ -20,3 +20,16 @@ plt.hist(x = prices_N,bins = 6,density=1,alpha = 0.5,label='prices_N')
 plt.legend()
 plt.savefig('layering hist.png')
 plt.show()
+
+# tuple decomposition
+# we can assign the value of different variable by this function 
+def func():
+    return 1,2,3,4
+t1 = (1,2)
+t2 = (3,4,1)
+x,y = t1
+y,z,p = t2
+print(x,y)
+print(y,z,p)
+# here i can get a tuple
+print(func())
