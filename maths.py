@@ -125,3 +125,19 @@ if __name__ == '__main__':
             print('Please enter an integer')            
     except ValueError:
         print('Please enter a number')
+# multiplication of table with exit function
+def multi_table(a):
+    for i in range(1,11):
+        print('{0} * {1} = {2}'.format(a,i,a*i))
+if __name__ =='__main__':
+    while True:
+        a = input('enter the number: ')
+        multi_table(float(a))
+        answer = input('do you want to exit? (y) for yes')
+        if answer == 'y':
+            break
+visualizing the graphs
+import matplotlib.pyplot as plt
+nyc_temp = [53.9, 56.3, 56.4, 53.4, 54.5, 55.8, 56.8, 55.0, 55.3, 54.0, 56.7, 56.4, 57.3]
+plot(nyc_temp,marker = 'o')
+plt.show()
