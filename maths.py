@@ -1,18 +1,18 @@
-find the factors of the integer
+# # find the factors of the integer
 def factor (b):
     for i in range(1,b+1):
         if b%i == 0:
             print(i)
 if __name__ == '__main__':
-    
+
     b = input('your number please')
     b = float(b)
     if b > 0 and b.is_integer():
         factor(int(b))
     else:
         print('enter the positive integer')
-
-creating multiplication table by function and using.format
+#
+# # creating multiplication table by function and using.format
 def multi_table(a):
     for i in range (1, 11):
         print('{0} x {1} = {2}'.format(a, i, a*i))
@@ -78,8 +78,8 @@ if __name__ == '__main__':
         d_r()
     if choice == '4':
         r_d()
-    
-quadratic equation root calculator
+#
+# # quadratic equation root calculator
 def roots(a,b,c):
     D = (b*b - 4*a*c)**0.5
     x_1 = (-b + D)/(2*a)
@@ -88,7 +88,7 @@ def roots(a,b,c):
     print('x1 : {0}'.format(x_1))
     print('x2 : {0}'.format(x_2))
 if __name__ == "__main__":
-    
+
     a = (input('enter a :'))
     b = (input('enter b :'))
     c = (input('enter c :'))
@@ -122,7 +122,7 @@ if __name__ == '__main__':
          if num.is_integer():
             even_odd_vend(int(num))
         else:
-            print('Please enter an integer')            
+            print('Please enter an integer')
     except ValueError:
         print('Please enter a number')
 # multiplication of table with exit function
@@ -136,8 +136,43 @@ if __name__ =='__main__':
         answer = input('do you want to exit? (y) for yes')
         if answer == 'y':
             break
-visualizing the graphs
+# visualizing the graphs
 import matplotlib.pyplot as plt
-nyc_temp = [53.9, 56.3, 56.4, 53.4, 54.5, 55.8, 56.8, 55.0, 55.3, 54.0, 56.7, 56.4, 57.3]
-plot(nyc_temp,marker = 'o')
+nyc_temp_2000 = [31.3, 37.3, 47.2, 51.0, 63.5, 71.3, 72.3, 72.7, 66.0, 57.0, 45.3, 31.1]
+nyc_temp_2006 = [40.9, 35.7, 43.1, 55.7, 63.1, 71.0, 77.9, 75.8, 66.6, 56.2, 51.9, 43.6]
+nyc_temp_2012 = [37.3, 40.9, 50.9, 54.8, 65.1, 71.0, 78.8, 76.7, 68.8, 58.0, 43.9, 41.5]
+months = range(1,13)
+plt.legend([2000,2006,2012])
+plt.plot(months,nyc_temp_2000,months,nyc_temp_2006,months,nyc_temp_2012,marker = 'o')
+from pylab import legend,title,xlabel,ylabel
+legend([2000,2006,2012])
+title('average monthly temperature in NYC')
+xlabel('month')
+ylabel('temperature')
 plt.show()
+
+# plotting above graph with function
+import matplotlib.pyplot as plt
+def make_graph():
+    nyc_temp_2000 = [31.3, 37.3, 47.2, 51.0, 63.5, 71.3, 72.3, 72.7, 66.0, 57.0, 45.3, 31.1]
+    nyc_temp_2006 = [40.9, 35.7, 43.1, 55.7, 63.1, 71.0, 77.9, 75.8, 66.6, 56.2, 51.9, 43.6]
+    nyc_temp_2012 = [37.3, 40.9, 50.9, 54.8, 65.1, 71.0, 78.8, 76.7, 68.8, 58.0, 43.9, 41.5]
+    plt.plot(nyc_temp_2000,nyc_temp_2006,nyc_temp_2012)
+    plt.show()
+if __name__ == '__main__':
+    make_graph()
+
+# temperature varying graph
+def plot_forecast():
+    time_of_day = ['4 AM', '7 AM', '10 AM', '1 PM', '4 PM', '7PM', '10 PM']
+    forecast_temp = [71, 70, 74, 80, 82, 81, 76]
+    time_interval = range(1, len(time_of_day) + 1)
+    plt.xlabel('time of day')
+    plt.ylabel('forecast')
+    plt.plot(time_interval, forecast_temp, 'o-')
+    plt.xticks(time_interval, time_of_day)
+    plt.title('temperature NYC')
+    plt.show()
+if __name__ == '__main__':
+    plot_forecast()
+
