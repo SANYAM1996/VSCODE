@@ -37,4 +37,22 @@ while turns>0:
     if failed == 0:
         print('you won')
 # exit the script
-break
+    break
+print()
+# ask the user go guess the character
+guess = raw_input('guess a character: ')
+# set the player guess to guesses
+guesses += guess
+# if the guess is not found in the secret word
+if guess not in word:
+    # turns counter decreases with 1
+    turns -= 1
+    # print wrong
+    print('wrong')
+# how many turns are left
+print('you have', + turns,'more guesses')
+
+# if the turns are equal to zero
+if turns == 0:
+    # print 'you loose'
+    print('you loose')
